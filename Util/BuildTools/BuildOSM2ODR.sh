@@ -89,11 +89,13 @@ if ${BUILD_OSM2ODR} ; then
   mkdir -p ${OSM2ODR_BUILD_FOLDER}
   cd ${OSM2ODR_BUILD_FOLDER}
   # define clang compiler
-  export CC=/usr/bin/clang-8
-  export CXX=/usr/bin/clang++-8
+  export CC=/usr/bin/clang
+  export CXX=/usr/bin/clang++
 
   cmake ${OSM2ODR_SOURCE_FOLDER} \
       -G "Eclipse CDT4 - Ninja" \
+      -DCMAKE_C_COMPILER=${CC}\
+      -DCMAKE_CXX_COMPILER=${CXX}\
       -DCMAKE_INSTALL_PREFIX=${LIBCARLA_INSTALL_CLIENT_FOLDER} \
       -DPROJ_INCLUDE_DIR=${CARLA_BUILD_FOLDER}/proj-install/include \
       -DPROJ_LIBRARY=${CARLA_BUILD_FOLDER}/proj-install/lib/libproj.a \
