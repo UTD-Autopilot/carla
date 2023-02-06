@@ -97,8 +97,11 @@ if ${BUILD_OSM2ODR} ; then
     echo "Using clang-$CARLA_LLVM_VERSION_MAJOR as the CARLA compiler."
   fi
 
-  export CC=/usr/bin/clang-$CARLA_LLVM_VERSION_MAJOR
-  export CXX=/usr/bin/clang++-$CARLA_LLVM_VERSION_MAJOR
+  # export CC=/usr/bin/clang-$CARLA_LLVM_VERSION_MAJOR
+  # export CXX=/usr/bin/clang++-$CARLA_LLVM_VERSION_MAJOR
+
+  export CC=clang
+  export CXX=clang++
 
   cmake ${OSM2ODR_SOURCE_FOLDER} \
       -G "Eclipse CDT4 - Ninja" \

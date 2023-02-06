@@ -37,7 +37,7 @@ mkdir -p "${FBX2OBJ_BUILD_FOLDER}"
 pushd "${FBX2OBJ_BUILD_FOLDER}" >/dev/null
 
 cmake -G "Ninja" \
-    -DCMAKE_CXX_FLAGS="-fPIC -std=c++14" \
+    -DCMAKE_CXX_FLAGS="-fPIC -std=c++14 -Wno-ignored-optimization-argument" \
     ..
 
 # copy the shared object 'libfbxsdk.so' to 'dist' folder
