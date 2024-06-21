@@ -23,6 +23,7 @@ After discussing about the world and its actors, it is time to put everything in
 	- [Add map package](tuto_M_add_map_package.md)
 	- [Add map source](tuto_M_add_map_source.md)
 	- [Alternative methods](tuto_M_add_map_alternative.md)
+- [__Additional maps__](#additional-maps)
 
 
 ---
@@ -244,14 +245,21 @@ Non-layered maps are shown in the table below (click the town name to see an ove
 
 | Town       | Summary |
 | -----------| ------  |
-| **[Town01](img/Town01.jpg)** | A basic town layout consisting of "T junctions".|
-| **[Town02](img/Town02.jpg)** | Similar to **Town01**, but smaller.|
-| **[Town03](img/Town03.jpg)** | The most complex town, with a 5-lane junction, a roundabout, unevenness, a tunnel, and more.|
-| **[Town04](img/Town04.jpg)** | An infinite loop with a highway and a small town.|
-| **[Town05](img/Town05.jpg)** | Squared-grid town with cross junctions and a bridge. It has multiple lanes per direction. Useful to perform lane changes.  |
-| **[Town06](img/Town06.jpg)** | Long highways with many highway entrances and exits. It also has a [**Michigan left**](<https://en.wikipedia.org/wiki/Michigan_left>). |
-| **[Town07](img/Town07.jpg)** | A rural environment with narrow roads, barns and hardly any traffic lights. |
-| **[Town10](img/Town10.jpg)** | A city environment with different environments such as an avenue or promenade, and more realistic textures.|
+| [__Town01__](map_town01.md)  | A small, simple town with a river and several bridges.|
+| [__Town02__](map_town02.md) | A small simple town with a mixture of residential and commercial buildings.|
+| [__Town03__](map_town03.md) | A larger, urban map with a roundabout and large junctions.|
+| [__Town04__](map_town04.md) | A small town embedded in the mountains with a special "figure of 8" *infinite* highway.|
+| [__Town05__](map_town05.md) | Squared-grid town with cross junctions and a bridge. It has multiple lanes per direction. Useful to perform lane changes.  |
+| [__Town06__](map_town06.md) | Long many lane highways with many highway entrances and exits. It also has a [**Michigan left**](<https://en.wikipedia.org/wiki/Michigan_left>). |
+| [__Town07__](map_town07.md) | A rural environment with narrow roads, corn, barns and hardly any traffic lights. |
+| **Town08** | Secret "unseen" town used for the [Leaderboard](https://leaderboard.carla.org/) challenge |
+| **Town09** | Secret "unseen" town used for the [Leaderboard](https://leaderboard.carla.org/) challenge |
+| [__Town10__](map_town10.md) | A downtown urban environment with skyscrapers, residential buildings and an ocean promenade.|
+| [__Town11__](map_town11.md) | A Large Map that is undecorated. Serves as a proof of concept for the Large Maps feature. |
+| [__Town12__](map_town12.md) | A Large Map with numerous different regions, including high-rise, residential and rural environments.|
+
+!!! note
+	Town06 and Town07 are additional content which does not come with the standard CARLA package. Please see the [additional maps section](#additional-maps) for details on how to import these. 
 
 ### Layered maps
 
@@ -287,3 +295,27 @@ CARLA is designed to be extensible and highly customisable for specialist applic
 * [__Add map package__](tuto_M_add_map_package.md)
 * [__Add map source__](tuto_M_add_map_source.md)
 * [__Alternative methods__](tuto_M_add_map_alternative.md)
+
+## Additional maps
+
+Each release has it's own additional package of extra assets and maps. This additional package includes the maps __Town06__ and __Town07__. These are stored separately to reduce the size of the build, so they can only be imported after the main package has been installed. 
+
+__1.__ [Download](https://github.com/carla-simulator/carla/blob/master/Docs/download.md) the appropriate package for your desired version of CARLA.
+
+__2.__ Extract the package:
+
+- __On Linux__:
+
+    - move the package to the _Import_ folder and run the following script to extract the contents:  
+
+```sh
+        cd path/to/carla/root
+
+        ./ImportAssets.sh
+```
+
+- __On Windows__:
+
+    - Extract the contents directly in the root folder. 
+
+---
