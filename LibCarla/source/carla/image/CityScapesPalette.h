@@ -48,7 +48,8 @@ namespace detail {
         { 81u,   0u,  81u},   // ground        =  25u
         {150u, 100u, 100u},   // bridge        =  26u
         {230u, 150u, 140u},   // rail track    =  27u
-        {180u, 165u, 180u}    // guard rail    =  28u
+        {180u, 165u, 180u},   // guard rail    =  28u
+        { 50u, 100u, 144u}    // OOD           =  29u
       };
 
 } // namespace detail
