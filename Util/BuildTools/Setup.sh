@@ -101,12 +101,7 @@ for PY_VERSION in ${PY_VERSION_LIST[@]} ; do
     # try to use the backup boost we have in Jenkins
     if [ ! -f "${BOOST_PACKAGE_BASENAME}.tar.gz" ] || [[ $(sha256sum "${BOOST_PACKAGE_BASENAME}.tar.gz" | cut -d " " -f 1 ) != "${BOOST_SHA256SUM}" ]] ; then
       log "Using boost backup"
-
-      start=$(date +%s)
-      wget "https://carla-releases.s3.us-east-005.backblazeb2.com/Backup/${BOOST_PACKAGE_BASENAME}.tar.gz" -O ${BOOST_PACKAGE_BASENAME}.tar.gz || true
-      end=$(date +%s)
-      echo "Elapsed Time downloading from boost carla backup in backblaze: $(($end-$start)) seconds"
-
+      wget "https://carla-releases.s3.us-east-005.backblazeb2.com/Backup/${BOOST_PACKAGE_BASENAME}.tar.gz" || true
     fi
 
     log "Extracting boost for Python ${PY_VERSION}."
@@ -431,10 +426,7 @@ else
   # try to use the backup boost we have in Jenkins
   if [[ ! -f "${XERCESC_BASENAME}.tar.gz" ]] ; then
     log "Using xerces backup"
-    start=$(date +%s)
     wget "https://carla-releases.s3.us-east-005.backblazeb2.com/Backup/${XERCESC_BASENAME}.tar.gz" || true
-    end=$(date +%s)
-    echo "Elapsed Time downloading from xerces backup: $(($end-$start)) seconds"
   fi
 
   log "Extracting xerces-c."
